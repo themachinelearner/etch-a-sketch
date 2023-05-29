@@ -50,8 +50,25 @@ function populateGrid(numCellsOnSide) {
 }
 
 function darkenBox(e) {
-    e.target.classList.add('darkened');
+    if (mouseDown) {
+        e.target.classList.add('darkened');
+    }
+}
+
+function registerMouseDown(e) {
+    e.target.setAttribute()
+}
+
+function setBodyEventListeners() {
+    document.body.onmousedown = () => (mouseDown = true);
+    document.body.onmouseup = () => (mouseDown = false);
+
 }
 
 const resetButton = document.querySelector('#resetButton');
 resetButton.addEventListener('click', setUpNewGrid);
+setBodyEventListeners();
+
+
+
+
