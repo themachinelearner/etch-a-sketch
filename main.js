@@ -22,16 +22,15 @@ function clearUserInput() {
 }
 
 function clearGrid() {
+    // Grid must be two levels deep and live under the gridHolder div
     const gridHolder = document.querySelector('#gridHolder');
     const outerChildren = gridHolder.children;
 
     Array.from(outerChildren).forEach(outerElement => {
-        
         const innerChildren = outerElement.children;
         Array.from(innerChildren).forEach(innerElement => {
             innerElement.remove();
         });
-
         outerElement.remove();
     });
 }
